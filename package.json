@@ -4,7 +4,7 @@
   "description": "A project from the ztm course - JavaScript Web Projects: 20 Projects to Build Your Portfolio",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:main": "sass ./src/scss/main.scss ./main.css --watch"
   },
   "author": "Patricio Schranz",
   "license": "ISC"

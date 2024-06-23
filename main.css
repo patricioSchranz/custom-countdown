@@ -1,0 +1,41 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body [data-hidden=true] {
+  display: none;
+}
+
+.header {
+  width: 100vw;
+  height: 100svh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header_video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.header_main-headline {
+  border: 2px solid tomato;
+}
+
+/*# sourceMappingURL=main.css.map */
