@@ -29,15 +29,14 @@ const localStringOptions = {
 const
     today = new Date(),
     todayLocalString = today.toLocaleString('de-AT',localStringOptions),
-    currentYear = today.getFullYear(),
-    todayMilliseconds = today.getTime()
+    currentYear = today.getFullYear()
 
 let
     currentHour = today.getHours(),
     currentMinutes = today.getMinutes(),
     currentSeconds = today.getSeconds()
 
-const currentCalendarWeek = getCalendarWeek(currentYear, todayMilliseconds)
+const currentCalendarWeek = getCalendarWeek(1998, new Date(1998, 10, 22))
 
 
 // *********************
@@ -48,13 +47,20 @@ const currentCalendarWeek = getCalendarWeek(currentYear, todayMilliseconds)
 function getCalendarWeek(year, date){
 
     // (!) =>  monday - saturday = 1 - 6 , sunday = 0
-    const firstJanuarWeekday = new Date(year, 0, 1).getDay()
+    const 
+        firstJanuarWeekday = new Date(year, 0, 1).getDay()
+        todayWeekday = date.getDay()
+
+    const isLateFirstWeek = firstJanuarWeekday > 4 || firstJanuarWeekday === 0 
+    ? true
+    : false
         
     let 
         firstMonday = 0,
-        firstMondayMilliseconds = 0
-        
-
+        firstMondayMilliseconds = 0,
+        todayMilliseconds = date.getTime(),
+        timeDifference = 0
+       
     if(firstJanuarWeekday > 1){
         // (?) => monday - sunday = 7 days + monday = 8 days
         firstMonday = 1 + (8 - firstJanuarWeekday)
@@ -67,9 +73,31 @@ function getCalendarWeek(year, date){
     }
 
     firstMondayMilliseconds = new Date(year, 0 , firstMonday).getTime()
-    timeDifference =  Math.round ( (date - firstMondayMilliseconds) / 604800000 )
 
-    return timeDifference
+    if(date < firstMondayMilliseconds && isLateFirstWeek){
+        return 52
+    }
+    else if(date < firstMondayMilliseconds){
+        return 1
+    }
+    else{
+        // (!) => 604800000 = 1 week in milliseconds
+       timeDifference =  Math.ceil( (date - firstMondayMilliseconds) / 604800000 )
+
+       console.log('time diff 1', (date - firstMondayMilliseconds) / 604800000)
+
+       if(!isLateFirstWeek && firstJanuarWeekday !== 1 || todayWeekday === 1){
+        timeDifference += 1
+       }
+    }
+    
+    console.log(todayWeekday)
+    console.log(new Date(date))
+    console.log(firstJanuarWeekday)
+    console.log(new Date(year, 0 , firstMonday))
+    console.log('is late first week', isLateFirstWeek)
+    console.log('time diff', timeDifference)
+    console.log(firstJanuarWeekday)
 }
 
 
