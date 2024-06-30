@@ -1,3 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+h1 {
+  font-family: "Jost", sans-serif;
+  font-weight: bold;
+  font-size: 4rem;
+  color: #fff;
+  margin: 0;
+}
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
 html {
   box-sizing: border-box;
 }
@@ -9,6 +23,7 @@ html {
 body {
   padding: 0;
   margin: 0;
+  overflow: hidden;
 }
 
 body [data-hidden=true] {
@@ -19,10 +34,17 @@ body [data-hidden=true] {
   width: 100vw;
   height: 100svh;
   overflow: hidden;
+  background-color: #000;
+}
+.header_content-container {
+  height: calc(100svh - 8rem);
+  width: 100%;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+@media screen and (max-width: 800px) {
+  .header_content-container {
+    height: calc(100svh - 7rem);
+  }
 }
 .header_video {
   width: 100%;
@@ -32,10 +54,72 @@ body [data-hidden=true] {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 1;
 }
 .header_main-headline {
-  border: 2px solid tomato;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+}
+.header_video-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: linear-gradient(0deg, #000 1.96%, rgba(248, 42, 208, 0.3) 100%);
+}
+
+.fabs {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  gap: 1.5rem;
+}
+.fabs_button {
+  all: initial;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  width: 4.3rem;
+  height: 4.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%;
+  background-color: #F5F5F5;
+  cursor: pointer;
+}
+@media screen and (max-width: 800px) {
+  .fabs_button {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+.fabs_button[data-active=false] {
+  background-color: transparent;
+  color: #F5F5F5;
+  border: 1px solid white;
+  transform: perspective(500px) rotateY(45deg);
+  transition: all 0.3s;
+}
+.fabs_button[data-active=false]:hover {
+  transform: none;
+}
+.fabs_button[data-active=false] img {
+  filter: invert(1);
+}
+.fabs_img {
+  height: 2.4rem;
+}
+@media screen and (max-width: 800px) {
+  .fabs_img {
+    height: 2rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

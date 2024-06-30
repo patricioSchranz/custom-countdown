@@ -11,25 +11,42 @@
     <!-- HEADER / HERO VIDEO -->
     <header class="header" data-hidden="false">
 
-        <!-- VIDEO -->
-        <video class="header_video" loop muted autoplay>
-            <source src="assets/video/bougainvillea-compressed.mp4"></video>
-        </video>
+        <div class="header_content-container">
 
-        <!-- HEADING -->
-        <h1 class="header_main-headline">CUSTOM COUNTDOWN</h1>
+            <!-- VIDEO -->
+            <video class="header_video" loop muted autoplay>
+                <source src="assets/video/bougainvillea-compressed.mp4"></video>
+            </video>
 
-        <!-- OVERLAY -->
-         <div class="header_overlay"></div>
+            <!-- HEADING -->
+            <h1 class="header_main-headline">CUSTOM COUNTDOWN</h1>
+
+            <!-- OVERLAY -->
+            <div class="header_video-overlay"></div>
+
+        </div>
     </header>
 
     <!-- DATE DISPLAY -->
-    <section class="date-display"></section>
+    <section class="set-countdown"></section>
 
     <!-- COUNTDOWNS -->
     <section class="countdowns"></section>
 
     <!-- FABS -->
-    <div class="fabs"></div>
+    <div class="fabs">
+        <button class="fabs_button" data-target="home" data-active="true">
+            <img class="fabs_img" src="assets/icons/bouganvillea.svg" alt="home icon">
+        </button>
+
+        <button class="fabs_button" data-target="set-countdown" data-active="false">
+            <img class="fabs_img" src="assets/icons/today.svg" alt="today icon">
+        </button>
+
+        <button class="fabs_button" data-target="countdowns" data-active="false">
+            <img class="fabs_img" src="assets/icons/calendar.svg" alt="calendar icon">
+        </button>
+        
+    </div>
 </body>
 </html>
