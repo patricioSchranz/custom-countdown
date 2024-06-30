@@ -12,6 +12,19 @@ h1 {
   }
 }
 
+h2 {
+  font-family: "Jost", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  color: #fff;
+  margin: 0;
+}
+@media screen and (max-width: 800px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
 html {
   box-sizing: border-box;
 }
@@ -23,10 +36,15 @@ html {
 body {
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  background-color: #000;
+  font-family: "Jost", sans-serif;
 }
 
 body [data-hidden=true] {
+  display: none;
+}
+
+.hidden {
   display: none;
 }
 
@@ -34,7 +52,6 @@ body [data-hidden=true] {
   width: 100vw;
   height: 100svh;
   overflow: hidden;
-  background-color: #000;
 }
 .header_content-container {
   height: calc(100svh - 8rem);
@@ -73,6 +90,30 @@ body [data-hidden=true] {
   background: linear-gradient(0deg, #000 1.96%, rgba(248, 42, 208, 0.3) 100%);
 }
 
+section[data-hidden] {
+  background: radial-gradient(635.38% 156.26% at -19.03% 9.82%, rgba(248, 42, 208, 0.5) 0%, rgba(0, 0, 0, 0.2) 56.1%, rgba(80, 120, 118, 0.5) 100%);
+  width: 100%;
+  min-height: 100svh;
+  border: 1px solid transparent;
+  padding: 3rem 1rem;
+  color: white;
+}
+section[data-hidden] header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.set-countdown_current-date-display {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.set-countdown_current-time-display {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
 .fabs {
   position: fixed;
   bottom: 2rem;
@@ -93,6 +134,7 @@ body [data-hidden=true] {
   border-radius: 10%;
   background-color: #F5F5F5;
   cursor: pointer;
+  border: 1px solid transparent;
 }
 @media screen and (max-width: 800px) {
   .fabs_button {
@@ -105,7 +147,7 @@ body [data-hidden=true] {
   color: #F5F5F5;
   border: 1px solid white;
   transform: perspective(500px) rotateY(45deg);
-  transition: all 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 .fabs_button[data-active=false]:hover {
   transform: none;

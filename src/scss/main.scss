@@ -16,6 +16,18 @@ h1{
     }
 }
 
+h2{
+    font-family: "Jost", sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #fff;
+    margin: 0;
+
+    @media screen and (max-width: 800px) {
+        font-size: 1.8rem;
+    }
+}
+
 
 
 // *******************
@@ -33,10 +45,15 @@ html {
 body{
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    background-color: #000;
+    font-family: "Jost", sans-serif;
 }
 
 body [data-hidden="true"]{
+    display: none;
+}
+
+.hidden{
     display: none;
 }
 
@@ -49,7 +66,6 @@ body [data-hidden="true"]{
     width: 100vw;
     height: 100svh;
     overflow: hidden;
-    background-color: #000;
 
     &_content-container{
         height: calc(100svh - 8rem);
@@ -92,12 +108,47 @@ body [data-hidden="true"]{
 }
 
 
+
+// *******************
+// SECTIONS
+// *******************
+
+// SECTION COMMONA
+section[data-hidden]{
+    background: radial-gradient(635.38% 156.26% at -19.03% 9.82%, rgba(248, 42, 208, 0.50) 0%, rgba(0, 0, 0, 0.20) 56.1%, rgba(80, 120, 118, 0.50) 100%);
+    width: 100%;
+    min-height: 100svh;
+    border: 1px solid transparent;
+    padding: 3rem 1rem;
+    color: white;
+
+    header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+// SET COUNTDOWN
+.set-countdown{
+    &_current-date-display{
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    &_current-time-display{
+        font-size: 3rem;
+        font-weight: bold;
+     }
+}
+
+
 // *******************
 // FABS
 // *******************
 
 .fabs{
-    // border: 3px solid blue;
     position: fixed;
     bottom: 2rem;
     left: 50%;
@@ -118,6 +169,7 @@ body [data-hidden="true"]{
         border-radius: 10%;
         background-color: #F5F5F5;
         cursor: pointer;
+        border: 1px solid transparent;
 
         // &:last-child{
         //     margin-right: 0;
@@ -133,7 +185,7 @@ body [data-hidden="true"]{
             color: #F5F5F5;
             border: 1px solid rgba($color: #fff, $alpha: 1);
             transform: perspective(500px) rotateY(45deg);
-            transition: all .3s;
+            transition: all .3s ease-in-out;
 
             &:hover{
                transform: none;

@@ -9,7 +9,7 @@
 <body>
 
     <!-- HEADER / HERO VIDEO -->
-    <header class="header" data-hidden="false">
+    <header class="header" data-hidden="false" id="home">
 
         <div class="header_content-container">
 
@@ -28,10 +28,32 @@
     </header>
 
     <!-- DATE DISPLAY -->
-    <section class="set-countdown"></section>
+    <section class="set-countdown" data-hidden="true" id="set-countdown">
+        <header>
+            <h2 class="hidden">SET COUNTDOWN</h2>
+
+            <div class="set-countdown_current-date-display">
+                <span class="set-countdown_current-date-display_kw">KW 26</span>
+                <span class="set-countdown_current-date-display_day">Thursday</span>, 
+                <span class="set-countdown_current-date-display_date">Thursday</span>
+            </div>
+
+            <div class="set-countdown_current-time-display">
+                <span class="set-countdown_current-time-display_hour">20</span> :
+                <span class="set-countdown_current-time-display_minutes">57</span> :
+                <span class="set-countdown_current-time-display_minutes">45</span>
+            </div>
+        </header>
+       
+    </section>
 
     <!-- COUNTDOWNS -->
-    <section class="countdowns"></section>
+    <section class="countdowns" data-hidden="true" id="countdowns">
+        <header>
+            <h2>CURRENT COUNTDOWNS</h2>
+        </header>
+        
+    </section>
 
     <!-- FABS -->
     <div class="fabs">
@@ -48,5 +70,7 @@
         </button>
         
     </div>
+
+    <script src="src/js/main.js"></script>
 </body>
 </html>
