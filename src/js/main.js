@@ -29,18 +29,50 @@ const localStringOptions = {
 const
     today = new Date(),
     todayLocalString = today.toLocaleString('de-AT',localStringOptions),
-    currentYear = today.getFullYear()
+    currentYear = today.getFullYear(),
+    todayMilliseconds = today.getTime()
 
 let
     currentHour = today.getHours(),
     currentMinutes = today.getMinutes(),
     currentSeconds = today.getSeconds()
 
-// => get the calendar week
-const firstJanuarWeekday = new Date(currentYear, 0, 1).getDay()
+const currentCalendarWeek = getCalendarWeek(currentYear, todayMilliseconds)
 
 
-console.log(firstJanuarWeekday)
+// *********************
+// FUNCTIONS
+// *********************
+
+// => get calendar weeks according to ISO 8601
+function getCalendarWeek(year, date){
+
+    // (!) => 
+    // monday - saturday = 1 - 6 
+    // sunday = 0
+    const firstJanuarWeekday = new Date(year, 0, 1).getDay()
+        
+    let 
+        firstMonday = 0,
+        firstMondayMilliseconds = 0
+        
+
+    if(firstJanuarWeekday > 1){
+        // (?) => monday - sunday = 7 days + monday = 8 days
+        firstMonday = 1 + (8 - firstJanuarWeekday)
+    }
+    else if(firstJanuarWeekday === 1){
+        firstMonday = 1 
+    }
+    else if(firstJanuarWeekday === 0){
+        firstMonday = 2
+    }
+
+    firstMondayMilliseconds = new Date(year, 0 , firstMonday).getTime()
+    timeDifference =  Math.round ( (date - firstMondayMilliseconds) / 604800000 )
+
+    return timeDifference
+}
 
 
 // *********************
@@ -73,6 +105,7 @@ faButtons.forEach(button =>{
 // *********************
 
 displayLocalString.innerHTML = todayLocalString
+displayCalenderWeek.innerHTML = `KW ${currentCalendarWeek}`
 
 setInterval(() =>{
     displayHours.innerHTML = currentHour.toString().padStart('2', '0'),

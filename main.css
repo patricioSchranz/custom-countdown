@@ -91,7 +91,7 @@ body [data-hidden=true] {
 }
 
 section[data-hidden] {
-  background: radial-gradient(635.38% 156.26% at -19.03% 9.82%, rgba(248, 42, 208, 0.5) 0%, rgba(0, 0, 0, 0.2) 56.1%, rgba(80, 120, 118, 0.5) 100%);
+  background: radial-gradient(200% 150% at -19.03% 9.82%, rgba(248, 42, 208, 0.3) 0%, rgba(0, 0, 0, 0.2) 56.1%, rgba(80, 120, 118, 0.5) 100%);
   width: 100%;
   min-height: 100svh;
   border: 1px solid transparent;
