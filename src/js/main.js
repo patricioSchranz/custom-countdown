@@ -47,9 +47,7 @@ const currentCalendarWeek = getCalendarWeek(currentYear, todayMilliseconds)
 // => get calendar weeks according to ISO 8601
 function getCalendarWeek(year, date){
 
-    // (!) => 
-    // monday - saturday = 1 - 6 
-    // sunday = 0
+    // (!) =>  monday - saturday = 1 - 6 , sunday = 0
     const firstJanuarWeekday = new Date(year, 0, 1).getDay()
         
     let 
