@@ -23,7 +23,7 @@ const localStringOptions = {
     weekday: 'long', 
     year: "numeric", 
     month: "2-digit", 
-    day: "numeric"
+    day: "2-digit"
 }
 
 const
@@ -36,7 +36,7 @@ let
     currentMinutes = today.getMinutes(),
     currentSeconds = today.getSeconds()
 
-const currentCalendarWeek = getCalendarWeek(1998, new Date(1998, 10, 22))
+const currentCalendarWeek = getCalendarWeek(currentYear, today)
 
 
 // *********************
@@ -84,20 +84,20 @@ function getCalendarWeek(year, date){
         // (!) => 604800000 = 1 week in milliseconds
        timeDifference =  Math.ceil( (date - firstMondayMilliseconds) / 604800000 )
 
-       console.log('time diff 1', (date - firstMondayMilliseconds) / 604800000)
-
        if(!isLateFirstWeek && firstJanuarWeekday !== 1 || todayWeekday === 1){
         timeDifference += 1
        }
+
+       return timeDifference
     }
     
-    console.log(todayWeekday)
-    console.log(new Date(date))
-    console.log(firstJanuarWeekday)
-    console.log(new Date(year, 0 , firstMonday))
-    console.log('is late first week', isLateFirstWeek)
-    console.log('time diff', timeDifference)
-    console.log(firstJanuarWeekday)
+    console.log('today weekday :', todayWeekday)
+    console.log('used date :', new Date(date))
+    console.log('first januar weekday : ', firstJanuarWeekday)
+    console.log('first monday :', new Date(year, 0 , firstMonday))
+    console.log('is late first week :', isLateFirstWeek)
+    console.log('time diff : ', timeDifference)
+    console.log('first januar weekday : ', firstJanuarWeekday)
 }
 
 
