@@ -9,7 +9,7 @@
 <body>
 
     <!-- HEADER / HERO VIDEO -->
-    <header class="header" data-hidden="false" id="home">
+    <header class="header" data-hidden="true" id="home">
 
         <div class="header_content-container">
 
@@ -28,7 +28,7 @@
     </header>
 
     <!-- DATE DISPLAY -->
-    <section class="set-countdown" data-hidden="true" id="set-countdown">
+    <section class="set-countdown" data-hidden="false" id="set-countdown">
         <header>
             <h2 class="hidden">SET COUNTDOWN</h2>
 
@@ -43,6 +43,43 @@
                 <span class="set-countdown_current-time-display_seconds">45</span>
             </div>
         </header>
+
+        <section class="set-countdown_form">
+            <!-- FORM -->
+            <form action="" method="">
+
+                <!-- TITLE -->
+                <div class="set-countdown_form_element-container">
+                    <label class="set-countdown_form_label" for="countdown-title">Title</label>
+                    <input
+                        class="set-countdown_form_input"
+                        type="text"
+                        name="countdown-title" 
+                        id="countdown-title"
+                        list="countdown-list"
+                        placeholder="e.g. holiday">
+
+                        <datalist id="countdown-list">
+                            <option value="weekend">
+                            <!-- other options are set with javascript -->
+                        </datalist> 
+                </div>
+
+                <!-- DATE -->
+                <div class="set-countdown_form_element-container">
+                    <label class="set-countdown_form_label" for="countdown-date">Date</label>
+                    <input
+                        class="set-countdown_form_input"
+                        type="datetime-local"
+                        name="countdown-date"
+                        id="countdown-date"
+                        min=""
+                        value="">
+                </div>
+
+                <button class="set-countdown_form_button" type="submit">SET COUNTDOWN</button>
+            </form>
+        </section>
        
     </section>
 

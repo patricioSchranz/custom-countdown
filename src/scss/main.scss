@@ -2,6 +2,7 @@
 // FONTS
 // *******************
 
+@import './mixins.scss';
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
 h1{
@@ -113,7 +114,7 @@ body [data-hidden="true"]{
 // SECTIONS
 // *******************
 
-// SECTION COMMONA
+// SECTION COMMON
 section[data-hidden]{
     background: radial-gradient(200% 150% at -19.03% 9.82%, rgba(248, 42, 208, 0.30) 0%, rgba(0, 0, 0, 0.20) 56.1%, rgba(80, 120, 118, 0.50) 100%);
     width: 100%;
@@ -121,12 +122,15 @@ section[data-hidden]{
     border: 1px solid transparent;
     padding: 3rem 1rem;
     color: white;
+    position: relative;
+    @include flex();
 
     header{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        @include flex($direction: column);
+        position: absolute;
+        top: 3rem;
+        left: 0;
+        width: 100%;
     }
 }
 
@@ -140,7 +144,23 @@ section[data-hidden]{
     &_current-time-display{
         font-size: 3rem;
         font-weight: bold;
-     }
+    }
+
+    &_form{
+        border: 2px solid red;
+        width: 30rem;
+
+        &_element-container{
+            border: 2px solid blue;
+            @include flex($direction: column);
+        }
+
+        &_label,
+        &_input,
+        &_button{
+            width: 100%;
+        }
+    }
 }
 
 

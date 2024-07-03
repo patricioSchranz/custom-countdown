@@ -97,12 +97,23 @@ section[data-hidden] {
   border: 1px solid transparent;
   padding: 3rem 1rem;
   color: white;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 section[data-hidden] header {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  width: 100%;
 }
 
 .set-countdown_current-date-display {
@@ -112,6 +123,21 @@ section[data-hidden] header {
 .set-countdown_current-time-display {
   font-size: 3rem;
   font-weight: bold;
+}
+.set-countdown_form {
+  border: 2px solid red;
+  width: 30rem;
+}
+.set-countdown_form_element-container {
+  border: 2px solid blue;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.set-countdown_form_label, .set-countdown_form_input, .set-countdown_form_button {
+  width: 100%;
 }
 
 .fabs {
