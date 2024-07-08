@@ -51,7 +51,7 @@ body{
 }
 
 body [data-hidden="true"]{
-    display: none;
+    display: none !important;
 }
 
 .hidden{
@@ -120,7 +120,7 @@ section[data-hidden]{
     width: 100%;
     min-height: 100svh;
     border: 1px solid transparent;
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
     color: white;
     position: relative;
     @include flex();
@@ -128,7 +128,7 @@ section[data-hidden]{
     header{
         @include flex($direction: column);
         position: absolute;
-        top: 3rem;
+        top: 2rem;
         left: 0;
         width: 100%;
     }
@@ -147,12 +147,13 @@ section[data-hidden]{
     }
 
     &_form{
-        border: 2px solid red;
+        // border: 2px solid red;
         width: 30rem;
 
         &_element-container{
-            border: 2px solid blue;
+            // border: 2px solid blue;
             @include flex($direction: column);
+            margin-bottom: 2rem;
         }
 
         &_label,
@@ -160,6 +161,77 @@ section[data-hidden]{
         &_button{
             width: 100%;
         }
+
+        &_label{
+            font-size: 1.6rem;
+            text-align: center;
+            color: rgba($color: #fff, $alpha: 0.6);
+            padding: .2rem;
+        }
+
+        &_input{
+            font-size: 1.2rem;
+            padding: .8rem;
+            background-color: rgba($color: #fff, $alpha: 0.1);
+            border: 1px solid rgba($color: #fff, $alpha: 0.02);
+            text-align: center;
+            color: rgba($color: #fff, $alpha: 0.2);
+            font-family: inherit;
+
+            &:focus, 
+            &:active{
+                color: rgba($color: #fff, $alpha: 0.6);
+            }
+
+            &::placeholder{
+                color: rgba($color: #fff, $alpha: 0.2);
+            }
+
+            &[type="text"]{
+                &::-webkit-calendar-picker-indicator{
+                    opacity: 0.8;
+                }
+            }
+
+            &[type="datetime-local"]{
+                &::-webkit-calendar-picker-indicator{
+                    filter: invert(1);
+                    opacity: 0.2;
+                }
+
+                &:focus, 
+                &:active{
+                    &::-webkit-calendar-picker-indicator{
+                        opacity: 0.6;
+                    }
+                }
+            }
+
+            &.valid{
+                color: rgba($color: #fff, $alpha: 1.0);
+            }
+        }
+
+        &_button{
+            display: block;
+            width: auto;
+            margin: auto;
+            padding: .2rem 1.5rem;
+            font-size: 1.4rem;
+            font-weight: bold;
+            background-color: #F7D32A;
+            border-radius: .6rem;
+            border: none;
+            font-family: inherit;
+        }
+    }
+
+    datalist{
+        background-color: tomato !important;
+    }
+
+    option{
+        background-color: tomato !important;
     }
 }
 
