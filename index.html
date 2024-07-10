@@ -27,7 +27,7 @@
         </div>
     </header>
 
-    <!-- DATE DISPLAY -->
+    <!-- SET COUNTDOWN  -->
     <section class="set-countdown" data-hidden="false" id="set-countdown">
         <header>
             <h2 class="hidden">SET COUNTDOWN</h2>
@@ -59,10 +59,10 @@
                         list="countdown-list"
                         placeholder="e.g. holiday">
 
-                        <datalist id="countdown-list">
-                            <option value="weekend">
+                        <ul class="custom-datalist" id="countdown-list">
+                            <li>weekday</li>
                             <!-- other options are set with javascript -->
-                        </datalist> 
+                        </ul class="custom-datalist"> 
                 </div>
 
                 <!-- DATE -->
@@ -107,6 +107,8 @@
         
     </div>
 
-    <script src="src/js/main.js"></script>
+    <script src="src/js/dom-elements.js"></script>
+    <script src="src/js/date-n-time-display.js"></script>
+    <script src="src/js/set-countdown.js"></script>
 </body>
 </html>

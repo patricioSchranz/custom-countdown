@@ -1,24 +1,10 @@
-// *********************
+// ************************
+// DATE AND TIME DISPLAY
+// ************************
+
+// .......................
 // VARIABLES
-// *********************
 
-// 
-// DOM ELEMENTS
-const 
-    header = document.querySelector('.header'),
-    sectionSetCountdown = document.querySelector('.set-countdown'),
-    sectionCountdownList = document.querySelector('.countdowns'),
-    allSections = document.querySelectorAll('[data-hidden]'),
-    faButtons = document.querySelectorAll('.fabs_button'),
-
-    displayCalenderWeek = document.querySelector('.set-countdown_current-date-display_kw'),
-    displayLocalString = document.querySelector('.set-countdown_current-date-display_local-string'),
-    displayHours = document.querySelector('.set-countdown_current-time-display_hours'),
-    displayMinutes = document.querySelector('.set-countdown_current-time-display_minutes'),
-    displaySeconds = document.querySelector('.set-countdown_current-time-display_seconds')
-
-// 
-// DATE VARIABLES
 const localStringOptions = {
     weekday: 'long', 
     year: "numeric", 
@@ -39,14 +25,13 @@ let
 const currentCalendarWeek = getCalendarWeek(currentYear, today)
 
 
-// *********************
+// .......................
 // FUNCTIONS
-// *********************
 
 // => get calendar weeks according to ISO 8601
 function getCalendarWeek(year, date){
 
-    // (!) =>  monday - saturday = 1 - 6 , sunday = 0
+    // !>  monday - saturday = 1 - 6 , sunday = 0
     const 
         firstJanuarWeekday = new Date(year, 0, 1).getDay()
         todayWeekday = date.getDay()
@@ -58,11 +43,11 @@ function getCalendarWeek(year, date){
     let 
         firstMonday = 0,
         firstMondayMilliseconds = 0,
-        todayMilliseconds = date.getTime(),
         timeDifference = 0
-       
+    
+    // => get the date of the first januar monday
     if(firstJanuarWeekday > 1){
-        // (?) => monday - sunday = 7 days + monday = 8 days
+        // ?> monday - sunday = 7 days + monday = 8 days
         firstMonday = 1 + (8 - firstJanuarWeekday)
     }
     else if(firstJanuarWeekday === 1){
@@ -74,6 +59,13 @@ function getCalendarWeek(year, date){
 
     firstMondayMilliseconds = new Date(year, 0 , firstMonday).getTime()
 
+
+    /**
+     * => if today is before the first monday of the year and not in the first calender week ...
+     * => else if today is before the first monday of the year but in the first calender week ...
+     * => else if today is after the first monday of the year
+     */
+    
     if(date < firstMondayMilliseconds && isLateFirstWeek){
         return 52
     }
@@ -81,11 +73,12 @@ function getCalendarWeek(year, date){
         return 1
     }
     else{
-        // (!) => 604800000 = 1 week in milliseconds
+        // !> 604800000 = 1 week in milliseconds
        timeDifference =  Math.ceil( (date - firstMondayMilliseconds) / 604800000 )
 
+       // => if the first calender week is before the first monday of the year add another count
        if(!isLateFirstWeek && firstJanuarWeekday !== 1 || todayWeekday === 1){
-        timeDifference += 1
+            timeDifference += 1
        }
 
        return timeDifference
@@ -93,50 +86,17 @@ function getCalendarWeek(year, date){
     
     console.log('today weekday :', todayWeekday)
     console.log('used date :', new Date(date))
-    console.log('first januar weekday : ', firstJanuarWeekday)
     console.log('first monday :', new Date(year, 0 , firstMonday))
     console.log('is late first week :', isLateFirstWeek)
     console.log('time diff : ', timeDifference)
     console.log('first januar weekday : ', firstJanuarWeekday)
 }
 
+// .......................
+// SET DISPLAY
 
-// *********************
-// FORM
-// *********************
-
-
-// *********************
-// FAB BUTTONS
-// *********************
-
-faButtons.forEach(button =>{
-    button.addEventListener('click', (e) =>{
-
-        // (!) => currentTarget points to the element that attached the listener
-        const targetOfButton = e.currentTarget.dataset.target
-
-        allSections.forEach(section =>{
-            section.id === targetOfButton 
-            ? section.dataset.hidden = false
-            : section.dataset.hidden = true
-        })
-
-        faButtons.forEach(fab => {
-            fab.dataset.target === targetOfButton 
-            ? fab.dataset.active = true
-            : fab.dataset.active = false
-        })
-    })
-})
-
-
-// *********************
-// DATE & TIME DISPLAYS
-// *********************
-
-displayLocalString.innerHTML = todayLocalString
 displayCalenderWeek.innerHTML = `KW ${currentCalendarWeek}`
+displayLocalString.innerHTML = todayLocalString
 
 setInterval(() =>{
     displayHours.innerHTML = currentHour.toString().padStart('2', '0'),
