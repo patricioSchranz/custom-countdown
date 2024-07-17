@@ -155,6 +155,10 @@ section[data-hidden] header {
 }
 .set-countdown_form_input:focus, .set-countdown_form_input:active {
   color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.set-countdown_form_input:focus-visible {
+  outline: none;
 }
 .set-countdown_form_input::placeholder {
   color: rgba(255, 255, 255, 0.2);
@@ -183,12 +187,33 @@ section[data-hidden] header {
   border-radius: 0.6rem;
   border: none;
   font-family: inherit;
+  margin-top: 3rem;
 }
-.set-countdown datalist {
-  background-color: tomato !important;
+.set-countdown .custom-datalist {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding-left: 0;
 }
-.set-countdown option {
-  background-color: tomato !important;
+.set-countdown .custom-datalist li {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.02);
+  opacity: 0.2;
+  transition: all 0.3s;
+  overflow: hidden;
+  height: 0;
+}
+.set-countdown .custom-datalist li.match {
+  height: 2rem;
+}
+.set-countdown .custom-datalist li:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 .fabs {

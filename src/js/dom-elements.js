@@ -13,4 +13,7 @@ const
     displayLocalString = document.querySelector('.set-countdown_current-date-display_local-string'),
     displayHours = document.querySelector('.set-countdown_current-time-display_hours'),
     displayMinutes = document.querySelector('.set-countdown_current-time-display_minutes'),
-    displaySeconds = document.querySelector('.set-countdown_current-time-display_seconds')
+    displaySeconds = document.querySelector('.set-countdown_current-time-display_seconds'),
+
+    inputTitle = document.querySelector('#countdown-title'),
+    titleDatalistpoints = document.querySelectorAll('.custom-datalist li')

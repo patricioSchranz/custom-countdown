@@ -181,6 +181,12 @@ section[data-hidden]{
             &:focus, 
             &:active{
                 color: rgba($color: #fff, $alpha: 0.6);
+                border: 1px solid rgba($color: #fff, $alpha: 0.6);
+                
+            }
+
+            &:focus-visible{
+                outline: none;
             }
 
             &::placeholder{
@@ -223,15 +229,34 @@ section[data-hidden]{
             border-radius: .6rem;
             border: none;
             font-family: inherit;
+            margin-top: 3rem;
         }
     }
 
-    datalist{
-        background-color: tomato !important;
-    }
+    .custom-datalist{
+        list-style: none;
+        width: 100%;
+        margin: 0;
+        padding-left: 0;
 
-    option{
-        background-color: tomato !important;
+        li{
+            @include flex();
+            color: rgba($color: #fff, $alpha: 0.8);
+            background-color: rgba($color: #fff, $alpha: 0.02);
+            opacity: 0.2;
+            transition: all .3s;
+            overflow: hidden;
+            height: 0;
+
+            &.match{
+                height: 2rem;
+            }
+
+            &:hover{
+                opacity: 1;
+                cursor: pointer;
+            }
+        }
     }
 }
 
