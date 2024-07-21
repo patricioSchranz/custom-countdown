@@ -16,4 +16,6 @@ const
     displaySeconds = document.querySelector('.set-countdown_current-time-display_seconds'),
 
     inputTitle = document.querySelector('#countdown-title'),
+    inputDate = document.querySelector('#countdown-date'),
+    titleList = document.querySelector('.custom-datalist'),
     titleDatalistpoints = document.querySelectorAll('.custom-datalist li')

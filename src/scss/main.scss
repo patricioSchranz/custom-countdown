@@ -167,6 +167,10 @@ section[data-hidden]{
             text-align: center;
             color: rgba($color: #fff, $alpha: 0.6);
             padding: .2rem;
+
+            &.valid{
+                color: rgba($color: #fff, $alpha: 1);
+            }
         }
 
         &_input{
@@ -239,6 +243,10 @@ section[data-hidden]{
         margin: 0;
         padding-left: 0;
 
+        &.off{
+            display: none;
+        }
+
         li{
             @include flex();
             color: rgba($color: #fff, $alpha: 0.8);
@@ -252,7 +260,8 @@ section[data-hidden]{
                 height: 2rem;
             }
 
-            &:hover{
+            &:hover,
+            &:focus{
                 opacity: 1;
                 cursor: pointer;
             }

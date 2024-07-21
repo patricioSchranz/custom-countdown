@@ -144,6 +144,9 @@ section[data-hidden] header {
   color: rgba(255, 255, 255, 0.6);
   padding: 0.2rem;
 }
+.set-countdown_form_label.valid {
+  color: white;
+}
 .set-countdown_form_input {
   font-size: 1.2rem;
   padding: 0.8rem;
@@ -195,6 +198,9 @@ section[data-hidden] header {
   margin: 0;
   padding-left: 0;
 }
+.set-countdown .custom-datalist.off {
+  display: none;
+}
 .set-countdown .custom-datalist li {
   display: flex;
   flex-direction: row;
@@ -211,7 +217,7 @@ section[data-hidden] header {
 .set-countdown .custom-datalist li.match {
   height: 2rem;
 }
-.set-countdown .custom-datalist li:hover {
+.set-countdown .custom-datalist li:hover, .set-countdown .custom-datalist li:focus {
   opacity: 1;
   cursor: pointer;
 }
