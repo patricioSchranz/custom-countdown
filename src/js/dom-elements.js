@@ -3,7 +3,7 @@
 // *********************
 
 const 
-    header = document.querySelector('.header'),
+    sectionHome = document.querySelector('.header'),
     sectionSetCountdown = document.querySelector('.set-countdown'),
     sectionCountdownList = document.querySelector('.countdowns'),
     allSections = document.querySelectorAll('[data-hidden]'),
@@ -18,4 +18,6 @@ const
     inputTitle = document.querySelector('#countdown-title'),
     inputDate = document.querySelector('#countdown-date'),
     titleList = document.querySelector('.custom-datalist'),
-    titleDatalistpoints = document.querySelectorAll('.custom-datalist li')
+    titleDatalistpoints = document.querySelectorAll('.custom-datalist li'),
+
+    submitButton = document.querySelector('.set-countdown_form_button')

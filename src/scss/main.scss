@@ -234,6 +234,66 @@ section[data-hidden]{
             border: none;
             font-family: inherit;
             margin-top: 3rem;
+            // border: 1px solid transparent;
+            cursor: pointer;
+            position: relative;
+            opacity: .1;
+            transition: padding .3s, opacity .5s;
+            pointer-events: none;
+
+            &.enabled{
+                pointer-events: auto;
+                opacity: 1;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    display: block;
+                    width: 0%;
+                    height: 100%;
+                    z-index: 1;
+                    border-radius: inherit;
+                    border-radius: .6rem 0 0 .6rem;
+                    background-color: rgba(255, 255, 255, .3);
+                    transition: width .3s;
+                }
+    
+                &::after{
+                    content: "\2B95";
+                    display: inline-block;
+                    width: 0rem;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    z-index: 2;
+                    transform: translateY(-50%);
+                    font-size: 2rem;
+                    font-weight: bold;
+                    transition: width .3s;
+                }
+    
+                &:hover,
+                &:focus,
+                &:focus-visible{
+                    padding-right: 3.5rem;
+    
+                    &::after{
+                        width: 3.5rem;
+                    }
+    
+                    &::before{
+                        width: calc(100% - 3rem);
+                    }
+                }
+
+            }
+
+            span{
+                position: relative;
+                z-index: 2;
+            }
         }
     }
 

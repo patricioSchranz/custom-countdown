@@ -16,61 +16,100 @@ const setValidStyle = (element) =>{
     element.previousElementSibling.classList.add('valid')
 }
 
+const removeValidStyle = (element) =>{
+    element.classList.remove('valid')
+    element.previousElementSibling.classList.remove('valid')
+}
+
+const setFormState = ()=>{
+    if(
+        inputTitle.classList.contains('valid')
+        && inputDate.classList.contains('valid')
+    ){
+        submitButton.classList.add('enabled')
+        console.log(submitButton)
+    }
+    else{
+        submitButton.classList.remove('enabled')
+        console.log(submitButton)
+    }
+}
+
 // .................
 // ELEMENT SETTINGS
 //..................
-inputDate.min = today.toISOString().slice(0,16)
 
+inputDate.min = today.toISOString().slice(0,16)
 
 // .............
 // LISTENERS
 // .............
 
-// => check if a title exists
 inputTitle.addEventListener('input', ()=>{
-    const regex  = new RegExp(inputTitle.value, "i")
+    
+    // => handle title state
+    if(inputTitle.value.length > 0){
+        setValidStyle(inputTitle)
+    }
+    else{
+        removeValidStyle(inputTitle)
+    }
+
+    // => set form state
+    setFormState()
+
+    // => show custom datalist
+    titleList.classList.remove('off')
+
+    // => show/hide titles from datalist
+    const regex  = new RegExp('^' + inputTitle.value, "i")
 
     titleDatalistpoints.forEach(listpoint =>{
-            if(listpoint.innerHTML.match(regex) && inputTitle.value.length > 0){
+            if( 
+                listpoint.innerHTML.match(regex)
+                && (listpoint.innerHTML.length > inputTitle.value.length)
+                && inputTitle.value.length > 0
+            ){
                 listpoint.classList.add("match")
+                listpoint.setAttribute('tabindex', '0')
             }
             else{
                 listpoint.classList.remove("match")
+                listpoint.removeAttribute('tabindex')
             }
     })
-
 })
 
-// => set title from datalist
 titleDatalistpoints.forEach(listpoint =>{
+
+    // => set title on click
     listpoint.addEventListener('click', ()=> {
         setTitle(listpoint, inputTitle)
         inputDate.focus()
     }) 
 
+    // => set title on keydown
     listpoint.addEventListener('keydown', (e)=>{
         if(e.key === "Enter"){ 
             setTitle(listpoint, inputTitle)
-            inputDate.focus()
         }
     })
 })
 
-// => hide title list
+// => hide custom datalist
 inputDate.addEventListener('focus', ()=> titleList.classList.add('off') )
-inputDate.addEventListener('focus', ()=> console.log(inputDate.value) )
 
-// => show title list
-inputTitle.addEventListener('focus', ()=> titleList.classList.remove('off') )
+inputDate.addEventListener('input', ()=>{
 
-// => handle change of input fields
-inputTitle.addEventListener('change', ()=>{
-    if (inputTitle.value.length > 0){ setValidStyle(inputTitle) }
-})
-
-inputDate.addEventListener('change', ()=>{
+    // => handle date state
     if (inputDate.value.length > 0){ setValidStyle(inputDate) }
+    else { removeValidStyle(inputDate) }
+
+    // => set form state
+    setFormState()
 })
+
+
 
 
 
