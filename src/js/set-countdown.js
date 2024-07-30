@@ -27,11 +27,9 @@ const setFormState = ()=>{
         && inputDate.classList.contains('valid')
     ){
         submitButton.classList.add('enabled')
-        console.log(submitButton)
     }
     else{
         submitButton.classList.remove('enabled')
-        console.log(submitButton)
     }
 }
 
@@ -40,6 +38,7 @@ const setFormState = ()=>{
 //..................
 
 inputDate.min = today.toISOString().slice(0,16)
+
 
 // .............
 // LISTENERS
@@ -109,6 +108,17 @@ inputDate.addEventListener('input', ()=>{
     setFormState()
 })
 
+setCountdownForm.addEventListener("submit", (e)=>{
+    e.preventDefault()
+
+    const newCountdownEvent = new CountdownEvent(inputTitle.value, new Date(inputDate.value).getTime())
+
+    console.log('new countdown event', newCountdownEvent)
+    storageCountdownEvents.push(newCountdownEvent)
+    localStorage.setItem("countdownEvents", JSON.stringify(storageCountdownEvents))
+
+    setCountdownForm.submit()
+})
 
 
 

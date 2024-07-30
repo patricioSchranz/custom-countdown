@@ -15,6 +15,7 @@ const
     displayMinutes = document.querySelector('.set-countdown_current-time-display_minutes'),
     displaySeconds = document.querySelector('.set-countdown_current-time-display_seconds'),
 
+    setCountdownForm = document.querySelector('#set-countdown-form'),
     inputTitle = document.querySelector('#countdown-title'),
     inputDate = document.querySelector('#countdown-date'),
     titleList = document.querySelector('.custom-datalist'),
