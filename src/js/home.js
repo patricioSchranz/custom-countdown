@@ -8,6 +8,8 @@
 
 const countdownDisplay = (deadline, title)=>{
 
+    homeTitle.innerHTML = title + ' begins in '
+
     const rightNow = new Date().getTime()
 
     let 
@@ -21,7 +23,8 @@ const countdownDisplay = (deadline, title)=>{
         remainingTime -= 1000
        
         if(remainingTime <= 0){
-            document.querySelector('.header_main-headline').innerHTML = `${title} is arrived`
+            homeTitle.innerHTML = `${title} is arrived`
+            homeCountdown.innerHTML = ''
             clearInterval(setCountdown)
         }
         else{
@@ -40,7 +43,7 @@ const countdownDisplay = (deadline, title)=>{
                 remainingDays--
             }
 
-            document.querySelector('.header_main-headline').innerHTML = `
+            homeCountdown.innerHTML = `
                 <span>${Math.floor(remainingDays).toString().padStart('2', '0')}</span> : 
                 <span>${Math.floor(remainingHours).toString().padStart('2', '0')}</span> : 
                 <span>${Math.floor(remainingMinutes).toString().padStart('2', '0')}</span> :
@@ -56,7 +59,7 @@ const countdownDisplay = (deadline, title)=>{
 //....................................
 
 if(countdownEvents.length <= 0){
-    document.querySelector('.header_main-headline').innerHTML = `CUSTOM COUNTDOWN`
+    homeTitle = `CUSTOM COUNTDOWN`
 }
 else {
     const focusEvent = countdownEvents.find(countdown => countdown.focus === true)

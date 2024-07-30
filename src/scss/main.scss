@@ -72,6 +72,7 @@ body [data-hidden="true"]{
         height: calc(100svh - 8rem);
         width: 100%;
         position: relative;
+        @include flex($direction: column, $justy: flex-end);
 
         @media screen and (max-width: 800px) {
             height: calc(100svh - 7rem);
@@ -90,11 +91,27 @@ body [data-hidden="true"]{
     }
 
     &_main-headline{
-        position: absolute;
-        bottom: 0;
-        width: 100%;
+        // position: absolute;
+        // bottom: 0;
+        width: 98%;
+        padding-top: 1rem;
         text-align: center;
+        position: relative;
         z-index: 3;
+        // border-top: 1px solid rgba(255, 255, 255, 1);
+    }
+
+    &_countdown{
+        width: 98%;
+        padding-bottom: 1rem;
+        // margin-bottom: 1rem;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        z-index: 3;
+        border-bottom: 1px dashed rgba(255, 255, 255, .2);
     }
 
     &_video-overlay{
@@ -104,7 +121,8 @@ body [data-hidden="true"]{
         top: 0;
         left: 0;
         z-index: 2;
-        background: linear-gradient(0deg, #000 1.96%, rgba(248, 42, 208, 30%) 100%);
+        // background: linear-gradient(0deg, #000 1.96%, rgba(248, 42, 208, 30%) 100%);
+        background: linear-gradient(0deg, #000 20%, rgba(248, 42, 208, 30%) 100%);
     }
 }
 

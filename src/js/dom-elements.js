@@ -4,6 +4,8 @@
 
 const 
     sectionHome = document.querySelector('.header'),
+    homeTitle = document.querySelector('.header_main-headline'),
+    homeCountdown = document.querySelector('.header_countdown'),
     sectionSetCountdown = document.querySelector('.set-countdown'),
     sectionCountdownList = document.querySelector('.countdowns'),
     allSections = document.querySelectorAll('[data-hidden]'),
