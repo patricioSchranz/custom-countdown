@@ -8,6 +8,7 @@ const
     sectionCountdownList = document.querySelector('.countdowns'),
     allSections = document.querySelectorAll('[data-hidden]'),
     faButtons = document.querySelectorAll('.fabs_button'),
+    buttonCountdownList = document.querySelector('[data-target="countdowns"]'),
 
     displayCalenderWeek = document.querySelector('.set-countdown_current-date-display_kw'),
     displayLocalString = document.querySelector('.set-countdown_current-date-display_local-string'),
@@ -19,6 +20,5 @@ const
     inputTitle = document.querySelector('#countdown-title'),
     inputDate = document.querySelector('#countdown-date'),
     titleList = document.querySelector('.custom-datalist'),
-    titleDatalistpoints = document.querySelectorAll('.custom-datalist li'),
 
     submitButton = document.querySelector('.set-countdown_form_button')

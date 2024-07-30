@@ -37,7 +37,23 @@ const setFormState = ()=>{
 // ELEMENT SETTINGS
 //..................
 
+// => set date input min value
 inputDate.min = today.toISOString().slice(0,16)
+
+// => create custom datalist entrys
+const countDownTitles = []
+
+countdownEvents.forEach(countdown =>{
+    if(!countDownTitles.includes(countdown.title)) { countDownTitles.push(countdown.title)}
+})
+
+console.log('countdown titles', countDownTitles)
+
+countDownTitles.forEach(title =>{
+    titleList.innerHTML += `<li>${title}</li>`
+})
+
+titleDatalistpoints = document.querySelectorAll('.custom-datalist li')
 
 
 // .............
@@ -114,8 +130,8 @@ setCountdownForm.addEventListener("submit", (e)=>{
     const newCountdownEvent = new CountdownEvent(inputTitle.value, new Date(inputDate.value).getTime())
 
     console.log('new countdown event', newCountdownEvent)
-    storageCountdownEvents.push(newCountdownEvent)
-    localStorage.setItem("countdownEvents", JSON.stringify(storageCountdownEvents))
+    countdownEvents.push(newCountdownEvent)
+    localStorage.setItem("countdownEvents", JSON.stringify(countdownEvents))
 
     setCountdownForm.submit()
 })

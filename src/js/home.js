@@ -1,12 +1,11 @@
 // *********************
-// CREATE DOM ELEMENTS
+// HOME SCREEN
 // *********************
 
-// .........................
-// SET HOME SCREEN HEADING
-//..........................
+// ...................................
+// CALLBACKS
+//....................................
 
-// => callback => set the countdown display
 const countdownDisplay = (deadline, title)=>{
 
     const rightNow = new Date().getTime()
@@ -52,29 +51,27 @@ const countdownDisplay = (deadline, title)=>{
  
 }
 
-if(storageCountdownEvents.length <= 0){
+// ...................................
+// SET HEADING/COUNTDOWN
+//....................................
+
+if(countdownEvents.length <= 0){
     document.querySelector('.header_main-headline').innerHTML = `CUSTOM COUNTDOWN`
 }
-else if(storageCountdownEvents.length === 1){
-    storageCountdownEvents[0].focus = true
+else {
+    const focusEvent = countdownEvents.find(countdown => countdown.focus === true)
+
+    if(focusEvent){
+        countdownDisplay(focusEvent.deadline, focusEvent.title)
+    }
+    else{
+        countdownEvents[0].focus = true
+        countdownDisplay(countdownEvents[0].deadline, countdownEvents[0].title)
+    }
+
+    console.log('fc event', focusEvent)
 }
 
-countdownDisplay(storageCountdownEvents[0].deadline, storageCountdownEvents[0].title)
 
 
 
-// .........................
-// FILL THE CUSTOM DATALIST
-//..........................
-
-const countDownTitles = []
-
-storageCountdownEvents.forEach(countdown =>{
-    if(!countDownTitles.includes(countdown.title)) { countDownTitles.push(countdown.title)}
-})
-
-console.log('countdown titles', countDownTitles)
-
-countDownTitles.forEach(title =>{
-    document.querySelector('.custom-datalist').innerHTML += `<li>${title}</li>`
-})

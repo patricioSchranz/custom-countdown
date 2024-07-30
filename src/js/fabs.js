@@ -2,6 +2,13 @@
 // FAB BUTTONS
 // *********************
 
+if(storageCountdownEvents.length === 0){
+    buttonCountdownList.setAttribute('data-hidden', 'true')
+}
+else{
+    buttonCountdownList.removeAttribute('data-hidden')
+}
+
 faButtons.forEach(button =>{
     button.addEventListener('click', (e) =>{
 
