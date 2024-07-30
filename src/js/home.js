@@ -59,7 +59,7 @@ const countdownDisplay = (deadline, title)=>{
 //....................................
 
 if(countdownEvents.length <= 0){
-    homeTitle = `CUSTOM COUNTDOWN`
+    homeTitle.innerHTML = `CUSTOM COUNTDOWN`
 }
 else {
     const focusEvent = countdownEvents.find(countdown => countdown.focus === true)
