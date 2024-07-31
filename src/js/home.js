@@ -1,10 +1,11 @@
-// *********************
-// HOME SCREEN
-// *********************
+/**
+ * HOME
+ * 
+ * >> shows the title and countdown of the event that has the focus or the project title if no countdown event exist
+ */
 
 // ...................................
 // CALLBACKS
-//....................................
 
 const countdownDisplay = (deadline, title)=>{
 
@@ -56,7 +57,6 @@ const countdownDisplay = (deadline, title)=>{
 
 // ...................................
 // SET HEADING/COUNTDOWN
-//....................................
 
 if(countdownEvents.length <= 0){
     homeTitle.innerHTML = `CUSTOM COUNTDOWN`

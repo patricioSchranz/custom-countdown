@@ -1,6 +1,8 @@
-// ***********************
-// COUNTDOWN EVENT CLASS
-// ***********************
+/**
+ * COUNTDOWN EVENT CLASS
+ * 
+ * >> the blueprint for countdown event objects
+ */
 
 class CountdownEvent{
     constructor(title, deadline, focus = false, creationDate = new Date().getTime()){

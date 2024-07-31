@@ -1,6 +1,8 @@
-// *********************
-// DOM ELEMENTS
-// *********************
+/**
+ * DOM ELEMENTS
+ * 
+ * >> contains all used html elements that are not created dynamicly
+ */
 
 const 
     sectionHome = document.querySelector('.header'),

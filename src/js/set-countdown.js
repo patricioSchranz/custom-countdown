@@ -1,10 +1,11 @@
-// *********************
-// SET COUNTDOWN
-// *********************
+/**
+ * SET COUNTDOWN
+ * 
+ * >> handled the form that creates a new countdown event
+ */
 
 // .............
 // CALLBACKS
-//..............
 
 const setTitle = (selection, target)=>{
     target.value = selection.innerText
@@ -35,7 +36,6 @@ const setFormState = ()=>{
 
 // .................
 // ELEMENT SETTINGS
-//..................
 
 // => set date input min value
 inputDate.min = today.toISOString().slice(0,16)
@@ -58,7 +58,6 @@ titleDatalistpoints = document.querySelectorAll('.custom-datalist li')
 
 // .............
 // LISTENERS
-// .............
 
 inputTitle.addEventListener('input', ()=>{
     

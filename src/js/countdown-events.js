@@ -1,6 +1,8 @@
-// *********************
-// COUNTDOWN EVENTS
-// *********************
+/**
+ * COUNTDOWN EVENTS
+ * 
+ * >> fetches all stored countdown events and creates instances of the countdown event class
+ */
 
 // => get storage countdown events
 const storageCountdownEvents = 

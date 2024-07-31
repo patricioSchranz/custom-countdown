@@ -1,6 +1,8 @@
-// ************************
-// DATE AND TIME DISPLAY
-// ************************
+/**
+ * DATE AND TIME DISPLAY
+ * 
+ * >> creates the date and time display of the set countdown section
+ */
 
 // .......................
 // VARIABLES

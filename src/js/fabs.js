@@ -1,7 +1,10 @@
-// *********************
-// FAB BUTTONS
-// *********************
+/**
+ * FAB BUTTONS
+ * 
+ * >> toggle between the sections
+ */
 
+// => only show the countdown list button if there are saved countdown events
 if(storageCountdownEvents.length === 0){
     buttonCountdownList.setAttribute('data-hidden', 'true')
 }
