@@ -20,4 +20,8 @@ class CountdownEvent{
     getEventLocalString(){
         return new Date(this.deadline).toLocaleString('de-AT',localStringOptions)
     }
+
+    getEventLocalDateString(){
+        return new Date(this.deadline).toLocaleDateString()
+    }
 }

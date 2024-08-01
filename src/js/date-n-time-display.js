@@ -1,7 +1,7 @@
 /**
  * DATE AND TIME DISPLAY
  * 
- * >> creates the date and time display of the set countdown section
+ * >> creates the date and time display of the set-countdown section
  */
 
 // .......................
@@ -33,6 +33,7 @@ const currentCalendarWeek = getCalendarWeek(currentYear, today)
 // => get calendar weeks according to ISO 8601
 function getCalendarWeek(year, date){
 
+    // !>  janyuary = 0 , december = 11
     // !>  monday - saturday = 1 - 6 , sunday = 0
     const 
         firstJanuarWeekday = new Date(year, 0, 1).getDay()

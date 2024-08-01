@@ -25,4 +25,6 @@ const
     inputDate = document.querySelector('#countdown-date'),
     titleList = document.querySelector('.custom-datalist'),
 
-    submitButton = document.querySelector('.set-countdown_form_button')
+    submitButton = document.querySelector('.set-countdown_form_button'),
+
+    countdownList = document.querySelector('.countdowns_list')
