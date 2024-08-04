@@ -116,23 +116,21 @@ section[data-hidden] {
   color: white;
   position: relative;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-section[data-hidden] header {
-  display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  position: absolute;
-  top: 2rem;
-  left: 0;
+  gap: 3rem;
+  padding-bottom: 8rem;
+}
+section[data-hidden] header {
   width: 100%;
+  text-align: center;
 }
 
+.set-countdown_header {
+  margin-bottom: 2rem;
+}
 .set-countdown_current-date-display {
   font-size: 2.5rem;
   font-weight: bold;
@@ -288,6 +286,62 @@ section[data-hidden] header {
   cursor: pointer;
 }
 
+.countdowns_list {
+  list-style: none;
+  padding: 0;
+  width: 90%;
+}
+.countdowns_list li {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.1rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  position: relative;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.countdowns_list li:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.countdowns_list li.achieved {
+  opacity: 0.2;
+}
+.countdowns_list li:nth-of-type(even) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.countdowns_list li:has(img[src*=true]) {
+  border: 1px solid rgba(248, 42, 207, 0.3);
+}
+.countdowns_list li:hover:has(img) {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+.countdowns_list li .countdown {
+  width: 10rem;
+  text-align: center;
+}
+.countdowns_list li img {
+  width: 2rem;
+  position: absolute;
+  right: 1rem;
+  transform: scale(0.5);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.countdowns_list li img:hover {
+  transform: scale(1);
+}
+.countdowns_list li img[src*=true] {
+  transform: rotate(45deg);
+}
+.countdowns_list li img[src*=true]:hover {
+  transform: rotate(0deg);
+}
+
 .fabs {
   position: fixed;
   bottom: 2rem;
@@ -295,6 +349,7 @@ section[data-hidden] header {
   transform: translate(-50%);
   display: flex;
   gap: 1.5rem;
+  z-index: 100;
 }
 .fabs_button {
   all: initial;
@@ -317,7 +372,7 @@ section[data-hidden] header {
   }
 }
 .fabs_button[data-active=false] {
-  background-color: transparent;
+  background-color: black;
   color: #F5F5F5;
   border: 1px solid white;
   transform: perspective(500px) rotateY(45deg);
@@ -336,6 +391,18 @@ section[data-hidden] header {
   .fabs_img {
     height: 2rem;
   }
+}
+
+.bottom-overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25svh;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0) 100%);
+  backdrop-filter: blur(0.5px);
+  height: 10rem;
+  z-index: 1;
 }
 
 /*# sourceMappingURL=main.css.map */
