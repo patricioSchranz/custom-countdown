@@ -378,12 +378,12 @@ section[data-hidden]{
                 background-color: rgba($color: #fff, $alpha: 0.1);
             }
 
-            &:has(img[src*="true"]){
-                border: 1px solid rgba(248, 42, 207, 0.3);
+            &:hover{
+                border: 1px solid rgba($color: #fff, $alpha: 0.1);
             }
 
-            &:hover:has(img){
-                border: 1px solid rgba($color: #fff, $alpha: 0.8);
+            &:has(img[src*="true"]){
+                border: 2px solid rgba(248, 42, 207, 0.3);
             }
 
             .countdown{
@@ -395,7 +395,7 @@ section[data-hidden]{
                 width: 2rem;
                 position: absolute;
                 right: 1rem;
-                transform: scale(.5);
+                transform: scale(.6);
                 transition: transform .3s;
                 cursor: pointer;
 
@@ -405,11 +405,7 @@ section[data-hidden]{
 
                 &[src*="true"]{
                     transform: rotate(45deg);
-
-                    &:hover{
-                        transform: rotate(0deg);
-                        // filter: invert(.5);
-                    }
+                    cursor: default;
                 }
             }
         }

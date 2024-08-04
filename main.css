@@ -314,11 +314,11 @@ section[data-hidden] header {
 .countdowns_list li:nth-of-type(even) {
   background-color: rgba(255, 255, 255, 0.1);
 }
-.countdowns_list li:has(img[src*=true]) {
-  border: 1px solid rgba(248, 42, 207, 0.3);
+.countdowns_list li:hover {
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.countdowns_list li:hover:has(img) {
-  border: 1px solid rgba(255, 255, 255, 0.8);
+.countdowns_list li:has(img[src*=true]) {
+  border: 2px solid rgba(248, 42, 207, 0.3);
 }
 .countdowns_list li .countdown {
   width: 10rem;
@@ -328,7 +328,7 @@ section[data-hidden] header {
   width: 2rem;
   position: absolute;
   right: 1rem;
-  transform: scale(0.5);
+  transform: scale(0.6);
   transition: transform 0.3s;
   cursor: pointer;
 }
@@ -337,9 +337,7 @@ section[data-hidden] header {
 }
 .countdowns_list li img[src*=true] {
   transform: rotate(45deg);
-}
-.countdowns_list li img[src*=true]:hover {
-  transform: rotate(0deg);
+  cursor: default;
 }
 
 .fabs {
