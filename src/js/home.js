@@ -45,10 +45,22 @@ const countdownDisplay = (deadline, title)=>{
             }
 
             homeCountdown.innerHTML = `
-                <span>${Math.floor(remainingDays).toString().padStart('2', '0')}</span> : 
-                <span>${Math.floor(remainingHours).toString().padStart('2', '0')}</span> : 
-                <span>${Math.floor(remainingMinutes).toString().padStart('2', '0')}</span> :
-                <span>${Math.floor(remainingSeconds).toString().padStart('2', '0')}</span>
+                <span class="countdown-element">
+                    ${Math.floor(remainingDays).toString().padStart('2', '0')}
+                    <span class="time-unit">Days</span>
+                </span> : 
+                <span class="countdown-element">
+                    ${Math.floor(remainingHours).toString().padStart('2', '0')}
+                    <span class="time-unit">Hours</span>
+                </span> : 
+                <span class="countdown-element">
+                    ${Math.floor(remainingMinutes).toString().padStart('2', '0')}
+                    <span class="time-unit">Minutes</span>
+                </span> :
+                <span class="countdown-element">
+                    ${Math.floor(remainingSeconds).toString().padStart('2', '0')}
+                    <span class="time-unit">Seconds</span>
+                </span>
                 `
         }
     }, 1000)

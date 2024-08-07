@@ -4,6 +4,7 @@
 
 @import './mixins.scss';
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 h1{
     font-family: "Jost", sans-serif;
@@ -112,6 +113,18 @@ body [data-hidden="true"]{
         position: relative;
         z-index: 3;
         border-bottom: 1px dashed rgba(255, 255, 255, .2);
+
+        .countdown-element{
+            display: inline-flex;
+            flex-direction: column;
+            width: 4rem;
+        }
+
+        .time-unit{
+            font-size: 1rem;
+            color: rgba(248, 42, 207, .4);
+            border-top: 1px solid rgba(248, 42, 207, .3);
+        }
     }
 
     &_video-overlay{
