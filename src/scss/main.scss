@@ -372,12 +372,13 @@ section[data-hidden]{
         li{
             border: 1px solid rgba($color: #000000, $alpha: 0.2);
             margin-bottom: .1rem;
-            padding: .5rem;
+            padding: .5rem 5rem;
             font-size: 1.2rem;
             position: relative;
             height: 4rem;
             @include flex();
             gap: 1rem;
+            cursor: pointer;
 
             &:nth-of-type(odd){
                 background-color: rgba($color: #fff, $alpha: 0.05);
@@ -393,10 +394,34 @@ section[data-hidden]{
 
             &:hover{
                 border: 1px solid rgba($color: #fff, $alpha: 0.1);
+
+                img{
+                    transform: scale(1);
+                }
             }
 
             &:has(img[src*="true"]){
                 border: 2px solid rgba(248, 42, 207, 0.3);
+                pointer-events: none;
+            }
+
+            &.achieved{
+                &:hover{
+                    text-decoration:line-through;
+                }  
+            }
+
+            .title{
+                width: 10rem;
+                overflow: hidden;
+                text-align: center;
+                text-overflow: ellipsis;
+            }
+
+            .date{
+                width: 7rem;
+                text-align: center;
+
             }
 
             .countdown{
@@ -410,11 +435,6 @@ section[data-hidden]{
                 right: 1rem;
                 transform: scale(.6);
                 transition: transform .3s;
-                cursor: pointer;
-
-                &:hover{
-                    transform: scale(1);
-                }
 
                 &[src*="true"]{
                     transform: rotate(45deg);

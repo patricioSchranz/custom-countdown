@@ -79,20 +79,29 @@ countdownListEntrys.forEach(listEntry =>{
     setListEntryCountdown(deadline, countdownDisplay)
 })
 
-// => handle the focus 
-const focusButtons = document.querySelectorAll(".countdowns_list img")
+// => handle the focus / delete completed events
+const countdownListPoints = countdownList.querySelectorAll('li')
 
-focusButtons.forEach(btn =>{
-    btn.addEventListener("click", ()=>{
-        const eventId = btn.parentElement.dataset.creationDate
+countdownListPoints.forEach(listpoint =>{
+    listpoint.addEventListener('click', ()=>{
+        const eventId = listpoint.dataset.creationDate
 
-        countdownEvents.forEach(countdownEvent =>{
-            if(countdownEvent.creationDate == eventId) { countdownEvent.focus = true }
-            else { countdownEvent.focus = false }
-        })
+        if(listpoint.classList.contains('pending')){
+            countdownEvents.forEach(countdownEvent =>{
+                if(countdownEvent.creationDate == eventId) {  countdownEvent.focus = true }
+                else { countdownEvent.focus = false }
+            })
+        }
+        else{
+            countdownEvents.forEach( (countdownEvent, idx) =>{
+                if(countdownEvent.creationDate == eventId) {  countdownEvents.splice(idx, 1) }
+            })
+        }
 
         localStorage.setItem("countdownEvents", JSON.stringify(countdownEvents))
         location.reload()
+       
     })
 })
+
 
