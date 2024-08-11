@@ -47,6 +47,9 @@ const setListEntryCountdown = (deadline, element) => {
     }, 1000)
 }
 
+// => sort the list by deadline date
+countdownEvents.sort((a, b) => a.deadline - b.deadline)
+
 // => create the countdown list items
 countdownEvents.forEach(countdownEvent =>{
     countdownList.innerHTML += `
