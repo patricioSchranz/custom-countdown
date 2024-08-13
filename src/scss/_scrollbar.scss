@@ -1,0 +1,19 @@
+/* width */
+::-webkit-scrollbar {
+    width: .7rem;
+
+    &-track {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    &-thumb{
+        background: rgba(248, 42, 207, .2);
+        border-radius: 1rem;
+        cursor: pointer;
+    
+        &:hover{
+            background: rgba(248, 42, 207, .3);
+        }
+    }
+}
+
