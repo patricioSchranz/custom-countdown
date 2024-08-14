@@ -29,6 +29,11 @@ h1 {
     font-size: 2.5rem;
   }
 }
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
 
 h2 {
   font-family: "Jost", sans-serif;
@@ -37,9 +42,9 @@ h2 {
   color: #fff;
   margin: 0;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 400px) {
   h2 {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -114,15 +119,30 @@ body [data-hidden=true] {
   z-index: 3;
   border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
 }
+@media screen and (max-width: 400px) {
+  .header_countdown {
+    font-size: 1.5rem;
+  }
+}
 .header_countdown .countdown-element {
   display: inline-flex;
   flex-direction: column;
   width: 4rem;
 }
+@media screen and (max-width: 400px) {
+  .header_countdown .countdown-element {
+    width: 3.5rem;
+  }
+}
 .header_countdown .time-unit {
   font-size: 1rem;
   color: rgba(248, 42, 207, 0.4);
   border-top: 1px solid rgba(248, 42, 207, 0.3);
+}
+@media screen and (max-width: 400px) {
+  .header_countdown .time-unit {
+    font-size: 0.9rem;
+  }
 }
 .header_video-overlay {
   width: 100%;
@@ -162,12 +182,33 @@ section[data-hidden] header {
   font-size: 2.5rem;
   font-weight: bold;
 }
+@media screen and (max-width: 800px) {
+  .set-countdown_current-date-display {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .set-countdown_current-date-display {
+    font-size: 1.2rem;
+  }
+}
 .set-countdown_current-time-display {
   font-size: 3rem;
   font-weight: bold;
 }
+@media screen and (max-width: 800px) {
+  .set-countdown_current-time-display {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .set-countdown_current-time-display {
+    font-size: 2rem;
+  }
+}
 .set-countdown_form {
   width: 30rem;
+  max-width: 98%;
 }
 .set-countdown_form_element-container {
   display: flex;
@@ -186,6 +227,11 @@ section[data-hidden] header {
   color: rgba(255, 255, 255, 0.6);
   padding: 0.2rem;
 }
+@media screen and (max-width: 400px) {
+  .set-countdown_form_label {
+    font-size: 1.4rem;
+  }
+}
 .set-countdown_form_label.valid {
   color: white;
 }
@@ -197,6 +243,11 @@ section[data-hidden] header {
   text-align: center;
   color: rgba(255, 255, 255, 0.2);
   font-family: inherit;
+}
+@media screen and (max-width: 400px) {
+  .set-countdown_form_input {
+    font-size: 1rem;
+  }
 }
 .set-countdown_form_input:focus, .set-countdown_form_input:active {
   color: rgba(255, 255, 255, 0.6);
@@ -238,6 +289,11 @@ section[data-hidden] header {
   opacity: 0.1;
   transition: padding 0.3s, opacity 0.5s;
   pointer-events: none;
+}
+@media screen and (max-width: 400px) {
+  .set-countdown_form_button {
+    font-size: 1.2rem;
+  }
 }
 .set-countdown_form_button.enabled {
   pointer-events: auto;
@@ -318,6 +374,11 @@ section[data-hidden] header {
   padding: 0;
   width: 90%;
 }
+@media screen and (max-width: 768px) {
+  .countdowns_list {
+    width: 98%;
+  }
+}
 .countdowns_list li {
   border: 1px solid rgba(0, 0, 0, 0.2);
   margin-bottom: 0.1rem;
@@ -333,6 +394,18 @@ section[data-hidden] header {
   gap: 1rem;
   cursor: pointer;
   transition: transform 0.1s;
+}
+@media screen and (max-width: 768px) {
+  .countdowns_list li {
+    height: auto;
+    padding-top: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  .countdowns_list li {
+    gap: 0.5rem;
+    padding: 0 0rem 0.5rem;
+  }
 }
 .countdowns_list li:nth-of-type(odd) {
   background-color: rgba(255, 255, 255, 0.05);
@@ -368,13 +441,33 @@ section[data-hidden] header {
   text-align: center;
   text-overflow: ellipsis;
 }
+@media screen and (max-width: 768px) {
+  .countdowns_list li .title {
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.02);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  }
+}
 .countdowns_list li .date {
   width: 7rem;
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  .countdowns_list li .date {
+    font-size: 1rem;
+  }
+}
 .countdowns_list li .countdown {
   width: 12rem;
   text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .countdowns_list li .title,
+  .countdowns_list li .date,
+  .countdowns_list li .countdown {
+    width: 100%;
+  }
 }
 .countdowns_list li img {
   width: 2rem;
@@ -382,6 +475,12 @@ section[data-hidden] header {
   right: 1rem;
   transform: scale(0.6);
   transition: transform 0.3s;
+}
+@media screen and (max-width: 500px) {
+  .countdowns_list li img {
+    top: 50%;
+    width: 1.5rem;
+  }
 }
 .countdowns_list li img[src*=true] {
   transform: rotate(45deg);

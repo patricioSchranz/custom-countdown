@@ -18,6 +18,10 @@ h1{
     @media screen and (max-width: 800px) {
         font-size: 2.5rem;
     }
+
+    @media screen and (max-width: 400px) {
+        font-size: 2rem;
+    }
 }
 
 h2{
@@ -27,8 +31,8 @@ h2{
     color: #fff;
     margin: 0;
 
-    @media screen and (max-width: 800px) {
-        font-size: 1.8rem;
+    @media screen and (max-width: 400px) {
+        font-size: 1.3rem;
     }
 }
 
@@ -116,16 +120,28 @@ body [data-hidden="true"]{
         z-index: 3;
         border-bottom: 1px dashed rgba(255, 255, 255, .2);
 
+        @media screen and (max-width: 400px) {
+            font-size: 1.5rem;
+        }
+
         .countdown-element{
             display: inline-flex;
             flex-direction: column;
             width: 4rem;
+
+            @media screen and (max-width: 400px) {
+                width: 3.5rem;
+            }
         }
 
         .time-unit{
             font-size: 1rem;
             color: rgba(248, 42, 207, .4);
             border-top: 1px solid rgba(248, 42, 207, .3);
+
+            @media screen and (max-width: 400px) {
+                font-size: .9rem;
+            }
         }
     }
 
@@ -176,15 +192,32 @@ section[data-hidden]{
     &_current-date-display{
         font-size: 2.5rem;
         font-weight: bold;
+
+        @media screen and (max-width: 800px) {
+            font-size: 2rem;
+        }
+    
+        @media screen and (max-width: 400px) {
+            font-size: 1.2rem;
+        }
     }
 
     &_current-time-display{
         font-size: 3rem;
         font-weight: bold;
+
+        @media screen and (max-width: 800px) {
+            font-size: 2.5rem;
+        }
+    
+        @media screen and (max-width: 400px) {
+            font-size: 2rem;
+        }
     }
 
     &_form{
         width: 30rem;
+        max-width: 98%;
 
         &_element-container{
             // border: 2px solid blue;
@@ -204,6 +237,10 @@ section[data-hidden]{
             color: rgba($color: #fff, $alpha: 0.6);
             padding: .2rem;
 
+            @media screen and (max-width: 400px) {
+                font-size: 1.4rem;
+            }
+
             &.valid{
                 color: rgba($color: #fff, $alpha: 1);
             }
@@ -217,6 +254,10 @@ section[data-hidden]{
             text-align: center;
             color: rgba($color: #fff, $alpha: 0.2);
             font-family: inherit;
+
+            @media screen and (max-width: 400px) {
+                font-size: 1rem;
+            }
 
             &:focus, 
             &:active{
@@ -275,6 +316,10 @@ section[data-hidden]{
             opacity: .1;
             transition: padding .3s, opacity .5s;
             pointer-events: none;
+
+            @media screen and (max-width: 400px) {
+                font-size: 1.2rem;
+            }
 
             &.enabled{
                 pointer-events: auto;
@@ -371,6 +416,10 @@ section[data-hidden]{
         padding: 0;
         width: 90%;
 
+        @media screen and (max-width: 768px) {
+           width: 98%;
+        }
+
         li{
             border: 1px solid rgba($color: #000000, $alpha: 0.2);
             margin-bottom: .1rem;
@@ -382,6 +431,17 @@ section[data-hidden]{
             gap: 1rem;
             cursor: pointer;
             transition: transform .1s;
+
+            @media screen and (max-width: 768px) {
+                height: auto;
+                padding-top: 0;
+            }
+
+            @media screen and (max-width: 500px) {
+                gap: .5rem;
+                padding: 0 0rem .5rem;
+            }
+
 
             &:nth-of-type(odd){
                 background-color: rgba($color: #fff, $alpha: 0.05);
@@ -425,17 +485,35 @@ section[data-hidden]{
                 overflow: hidden;
                 text-align: center;
                 text-overflow: ellipsis;
+
+                @media screen and (max-width: 768px) {
+                    padding-bottom: .2rem;
+                    border-bottom: 1px solid rgba($color: #fff, $alpha: 0.05);
+                    background-color: rgba($color: #fff, $alpha: 0.02);
+                    box-shadow: 0 0 25px rgba($color: #000000, $alpha: 0.2);
+                }
             }
 
             .date{
                 width: 7rem;
                 text-align: center;
 
+                @media screen and (max-width: 768px) {
+                    font-size: 1rem;
+                }
             }
 
             .countdown{
                 width: 12rem;
                 text-align: center;
+            }
+
+            .title,
+            .date,
+            .countdown{
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                }
             }
 
             img{
@@ -444,6 +522,11 @@ section[data-hidden]{
                 right: 1rem;
                 transform: scale(.6);
                 transition: transform .3s;
+
+                @media screen and (max-width: 500px) {
+                    top: 50%;
+                    width: 1.5rem;
+                }
 
                 &[src*="true"]{
                     transform: rotate(45deg);
