@@ -11,7 +11,6 @@ const ab = {
     day: "2-digit"
 }
 
-console.log(new Date(1723231020000).toLocaleString('de-AT',ab))
 
 class CountdownEvent{
 

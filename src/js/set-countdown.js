@@ -47,8 +47,6 @@ countdownEvents.forEach(countdown =>{
     if(!countDownTitles.includes(countdown.title)) { countDownTitles.push(countdown.title)}
 })
 
-console.log('countdown titles', countDownTitles)
-
 countDownTitles.forEach(title =>{
     titleList.innerHTML += `<li>${title}</li>`
 })
@@ -128,7 +126,6 @@ setCountdownForm.addEventListener("submit", (e)=>{
 
     const newCountdownEvent = new CountdownEvent(inputTitle.value, new Date(inputDate.value).getTime())
 
-    console.log('new countdown event', newCountdownEvent)
     countdownEvents.push(newCountdownEvent)
     localStorage.setItem("countdownEvents", JSON.stringify(countdownEvents))
 

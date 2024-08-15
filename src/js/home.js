@@ -83,8 +83,6 @@ else {
         countdownEvents[0].focus = true
         countdownDisplay(countdownEvents[0].deadline, countdownEvents[0].title)
     }
-
-    console.log('fc event', focusEvent)
 }
 
 

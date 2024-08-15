@@ -98,14 +98,11 @@ body [data-hidden="true"]{
     }
 
     &_main-headline{
-        // position: absolute;
-        // bottom: 0;
         width: 98%;
         padding-top: 1rem;
         text-align: center;
         position: relative;
         z-index: 3;
-        // border-top: 1px solid rgba(255, 255, 255, 1);
     }
 
     &_countdown{
@@ -152,7 +149,6 @@ body [data-hidden="true"]{
         top: 0;
         left: 0;
         z-index: 2;
-        // background: linear-gradient(0deg, #000 1.96%, rgba(248, 42, 208, 30%) 100%);
         background: linear-gradient(0deg, #000 20%, rgba(248, 42, 208, 30%) 100%);
     }
 }
