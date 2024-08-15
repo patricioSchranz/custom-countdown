@@ -11,7 +11,6 @@ const ab = {
     day: "2-digit"
 }
 
-
 class CountdownEvent{
 
     #localStringOptions = {
