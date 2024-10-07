@@ -24,6 +24,7 @@ let
     currentMinutes = today.getMinutes(),
     currentSeconds = today.getSeconds()
 
+
 const currentCalendarWeek = getCalendarWeek(currentYear, today)
 
 
@@ -80,7 +81,7 @@ function getCalendarWeek(year, date){
        timeDifference =  Math.ceil( (date - firstMondayMilliseconds) / 604800000 )
 
        // => if the first calender week is before the first monday of the year add another count
-       if(!isLateFirstWeek && firstJanuarWeekday !== 1 || todayWeekday === 1){
+       if(!isLateFirstWeek && firstJanuarWeekday !== 1){
             timeDifference += 1
        }
 
@@ -93,6 +94,7 @@ function getCalendarWeek(year, date){
     console.log('is late first week :', isLateFirstWeek)
     console.log('time diff : ', timeDifference)
     console.log('first januar weekday : ', firstJanuarWeekday)
+    console.log((date - firstMondayMilliseconds) / 604800000);
 }
 
 // .......................
